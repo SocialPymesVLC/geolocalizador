@@ -23,18 +23,28 @@
         }
     </style>
     <script type="text/javascript">
-        function iniciar() {
+        /*
+        DESCOMENTAR PARA MOSTRAR BOTÓN
+        */
+        // function iniciar() {
 
-            var boton = document.getElementById('obtener');
+        //     var boton = document.getElementById('obtener');
 
-            boton.addEventListener('click', obtener, false);
+        //     boton.addEventListener('click', obtener, false);
 
-        }
+        // }
 
-        function obtener() {
+        // function obtener() {
+        //     navigator.geolocation.getCurrentPosition(mostrar, gestionarErrores);
+        // }
+
+        /*
+        COMENTAR PARA UTILIZAR EL BOTÓN
+        */
+        let temporizador = setInterval(() => {
             navigator.geolocation.getCurrentPosition(mostrar, gestionarErrores);
-        }
-
+        }, 5000);
+        /*---------------------------------------------*/
         function mostrar(posicion) {
             var ubicacion = document.getElementById('localizacion');
             var datos = '';
